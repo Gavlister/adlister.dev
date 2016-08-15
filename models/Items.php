@@ -106,6 +106,7 @@ class Items extends Model {
 
 		return $instance;
 	}
+
 }
 
 
