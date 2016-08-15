@@ -85,7 +85,7 @@ function saveUser()
 		else
 		{
 			$_SESSION['ERROR_MESSAGE'] = 'Failed to login user after signup. Please login with the form below.';
-			header('Location: /login');
+			header('Location: /account/login');
 			exit();
 		}
 	}
