@@ -85,10 +85,22 @@ function pageController()
 		case '/logout':
 			runLogout();
 			break;
+		case '/search/tag':
+			Tags::all();
+			break;
+		case '/search/user':
+			Users::all();
+			break;
+		case '/search/item':
+			Items::all();
+			break;
+		
+
 		default:    // displays 404 if route not specified above
 		$main_view = '../views/404.php';
 		break;
 	}
+	
 	//be able to post to differing tables based on the page they post from
 	// temporarily define variables to call table info here, then put them into a helper function once thgey work
 	// $data['ad'] = Items::find(8);

@@ -137,7 +137,7 @@ function itemsSave()
 
 function tagSave($name)
 {
-	$tag = new Tag();
+	$tag = new Tags();
 	$tag->name = trim($name);
 	//change me later!//
 	

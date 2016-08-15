@@ -6,30 +6,3 @@
 .view {
 	padding-top: 75px;
 }
-/*.dropdown-toggle {
-	position: absolute;
-	left: 520px;
-	top: 15px;
-}
-.searchbar {
-	margin: 3px;
-}
-.dropdown-menu {
-	position: absolute;
-	left: 520px;
-	top: 45px;
-	height: 115px;
-	width: 200px;
-
-*/
-}
-.searchby {
-	margin: 5px;
-	z-index: 2;
-}
-.harambe {
-	z-index: 1;
-	position: absolute;
-	top: 40px;
-	left: 80px;
-}
