@@ -52,7 +52,7 @@ function redirectIfLoggedIn()
 {
 	if (Auth::check())
 	{
-		header('Location: /account/edit');
+		header('Location: /account/edit/');
 	}
 }
 function login()

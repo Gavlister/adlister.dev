@@ -1,6 +1,7 @@
 <?php  
-require_once __DIR__ . '/../utils/Input.php';
-class Tag extends Model
+require_once __DIR__ . '/Model.php';
+
+class Tags extends Model
 {
     protected static $table = "tags";
     public function searchTag()
@@ -17,9 +18,19 @@ class Tag extends Model
 SEARCHTAG;
         return $searchTag;
     }
-    public function assignTag()
-    {
 
+    public static function showTags($itemId)
+    {
+        $query = <<<QUERY
+        SELECT * FROM tags as t
+        JOIN items_tags AS it
+        ON it.tag_id = t.id
+        WHERE it.item_id = :id
+QUERY;
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id', $itemId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 }
 ?>
