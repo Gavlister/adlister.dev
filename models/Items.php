@@ -57,9 +57,10 @@ class Items extends Model {
 		self::dbConnect();
 
       //Create select statement using prepared statements
-		$query = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC LIMIT 3';
+		$query = 'SELECT * FROM ' . static::$table . ' WHERE user_id = :id ORDER BY id DESC LIMIT 3';
 
 		$stmt = self::$dbc->prepare($query);
+		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		$stmt->execute();
 
       //Store the resultset in a variable named $result
